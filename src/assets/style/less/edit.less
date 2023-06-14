@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+//checkbox
+ul {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    & li {
+      position: relative;
+      list-style: none;
+      text-align: center;
+      margin: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #3cbbe5;
+      & label {
+        position: relative; 
+        cursor: pointer;
+        
+        & input[type="radio"] {
+          position: absolute;
+          opacity: 0;
+        }
+        
+        & :checked ~ .icon-box {
+          box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 1),
+                inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+               color: red;
+          & .fa {
+            transform: scale(0.95);
+          }
+        }
+        
+        & .icon-box {
+          padding: 5px 10px;
+          background: #ebf5fc;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+                3px 3px 5px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          
+          & .fa {
+            font-size: 30px;
+            color: #fd3e17;
+          }
+          
+        }
+      }
+    }
+  }
+  
+  
+  /* --------Social Icons-------- */
+  
+  /* Color Variables */
+  @color-codepen: #000;
+  @color-twitter: #2b97f1;
+  /* Social Icon Mixin */
+//   @mixin social-icon(@color) {
+//     background: @color;
+//     color: #fff;
+  
+//     .tooltip {
+//       background: @color;
+//       color: currentColor;
+  
+//       &:after {
+//         border-top-color: @color;
+//       }
+//     }
+//   }
+  
+  .social-icons {
+    display: flex;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 0.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  
+    &:hover {
+      color: #fff;
+  
+      .tooltip {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -150%);
+      }
+    }
+      
+    &:active {
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+    }
+    
+    &--twitter { @include social-icon(@color-twitter); }
+    &--codepen { @include social-icon(@color-codepen); }
+    
+    i {
+      position: relative;
+      top: 1px;
+    }
+  }  
+
+
+
+.editer-title {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+
+    input {
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        border-radius: 320px;
+        padding:5px 15px;
+        background-color: #EBECF0;
+        text-shadow: 1px 1px 0 #FFF;
+        margin-right: 8px;
+        box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+        width: 30%;
+        transition: all 0.2s ease-in-out;
+        appearance: none;
+        -webkit-appearance: none;
+
+        &:focus {
+            box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #fff;
+        }
+    }
+}
+
+.editer-columns {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    white-space: nowrap;
+}
+
+// <START> option code
