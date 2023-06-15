@@ -20,16 +20,8 @@
         </div>
         <div class="rigth-content">
           <ul ref="scrollBox">
-            <li
-              :class="`socke-msg-${chat.dis}`"
-              v-for="chat in chatList"
-              :key="chat.id"
-            >
-              <i
-                class="el-icon-s-custom"
-                v-show="chat.dis !== 'center'"
-                v-if="chat.dis === 'left'"
-              ></i>
+            <li :class="`socke-msg-${chat.dis}`" v-for="chat in chatList" :key="chat.id">
+              <i class="el-icon-s-custom" v-show="chat.dis !== 'center'" v-if="chat.dis === 'left'"></i>
               <div class="msgLi">
                 <div class="lisName" v-show="chat.dis === 'left'">
                   {{ chat.nickname }}
@@ -39,22 +31,13 @@
                   {{ chat.time }}
                 </p>
               </div>
-              <i
-                class="el-icon-s-custom"
-                v-show="chat.dis !== 'center'"
-                v-if="chat.dis === 'right'"
-              ></i>
+              <i class="el-icon-s-custom" v-show="chat.dis !== 'center'" v-if="chat.dis === 'right'"></i>
             </li>
           </ul>
         </div>
         <div class="rigth-bottom">
           <div class="write">
-            <input
-              type="text"
-              placeholder="回车键发送消息..."
-              v-model="sendMsg"
-              @keyup.enter="sendChat"
-            />
+            <input type="text" placeholder="回车键发送消息..." v-model="sendMsg" @keyup.enter="sendChat" />
             <i class="el-icon-s-promotion" @click="sendChat"></i>
           </div>
         </div>
@@ -80,7 +63,7 @@ export default {
     }
   },
   created() {
-    this.ws = io("ws://127.0.0.1:8888", { transports: ['websocket'] })
+    this.ws = io("ws://www.myblogvue.cn:3004", { transports: ['websocket'] })
     this.getUserInfo()
 
     //用户进入聊天室，把id和昵称带给服务器

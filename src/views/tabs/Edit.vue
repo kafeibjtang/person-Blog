@@ -79,7 +79,7 @@ export default {
         placeholder: '请输入内容...',
         MENU_CONF: {
           uploadImage: {
-            server: 'http://127.0.0.1:3000/upload/article',
+            server: 'http://www.myblogvue.cn:3001/upload/article',
             fieldName: 'file',
             maxFileSize: 5 * 1024 * 1024, // 10M
             maxNumberOfFiles: 5,

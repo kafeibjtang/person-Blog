@@ -74,9 +74,9 @@
                 </div>
               </fieldset>
               <div class="forms_buttons" @click="login('loginForm')">
-                <button type="button" class="forms_buttons-forgot"></button>
+                <button class="forms_buttons-forgot"></button>
                 <input
-                  type="submit"
+                  type="button"
                   value="Log In"
                   class="forms_buttons-action"
                 />
@@ -142,7 +142,7 @@
 
             <div class="forms_buttons" @click="login('sginForm')">
               <input
-                type="submit"
+                type="button"
                 value="Sign up"
                 class="forms_buttons-action"
               />
@@ -187,7 +187,7 @@ export default {
           { type: "email", message: "请输入合法邮箱地址", trigger: ["blur", "change"] },
         ]
       },
-      isType: true,
+      isType: false,
       typePath: "/home/page"
     }
   },
@@ -215,6 +215,7 @@ export default {
       this.isType = false
     },
     login(type) {
+
       this.$refs[type].validate(async (valid) => {
         if (valid) {
           //登录
@@ -224,11 +225,12 @@ export default {
               password: this.formData.password
             }
             try {
+
               let { nickname } = await ResLogin(loginData)
               this.$notify.success(`欢迎你 ${nickname} *(> . <)*`)
               this.$bus.$emit("isLogin")
-              this.$bus.$emit("addIdx", this.typePath)
               this.$router.push(this.typePath)
+              this.$bus.$emit("addIdx", this.typePath)
             } catch (error) {
               this.$notify.error(error.response.data.message)
               return error
@@ -322,7 +324,7 @@ input {
   border: 0;
   outline: 0;
 
-  &[type="submit"] {
+  &[type="button"] {
     cursor: pointer;
   }
 

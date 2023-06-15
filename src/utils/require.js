@@ -5,7 +5,7 @@ import {
 } from "element-ui";
 
 const http = axios.create({
-    baseURL: 'http://127.0.0.1:3000/',
+    baseURL: 'http://111.230.17.116:3001',
     timeout: 10000,
 });
 

@@ -8,11 +8,19 @@
               src="https://ppt.chnlib.com/FileUpload/2019-02/PNGTou_Ming_Bei_Jing-151450_119.png"
               alt="欢迎~"
             /> -->
-            <img src="https://img2.baidu.com/it/u=3242834556,2556611746&fm=253&fmt=auto&app=138&f=PNG?w=500&h=393"
-              alt="欢迎~" />
+            <img
+              src="https://img2.baidu.com/it/u=3242834556,2556611746&fm=253&fmt=auto&app=138&f=PNG?w=500&h=393"
+              alt="欢迎~"
+            />
           </h1>
         </div>
-        <el-menu router :default-active="idx" class="el-menu-vertical-demo" text-color="#000" active-text-color="#daa520">
+        <el-menu
+          router
+          :default-active="idx"
+          class="el-menu-vertical-demo"
+          text-color="#000"
+          active-text-color="#daa520"
+        >
           <el-menu-item index="/home/page" @click="addIdx('/home/page')">
             <i class="el-icon-s-home"></i>
             <span slot="title">首页</span>
@@ -25,7 +33,10 @@
             <i class="el-icon-folder-opened"></i>
             <span slot="title">作品集</span>
           </el-menu-item>
-          <el-menu-item index="/home/articles" @click="addIdx('/home/articles')">
+          <el-menu-item
+            index="/home/articles"
+            @click="addIdx('/home/articles')"
+          >
             <i class="el-icon-notebook-1"></i>
             <span slot="title">学无止境</span>
           </el-menu-item>
@@ -38,7 +49,10 @@
             <i class="el-icon-chat-line-round"></i>
             <span slot="title">闲聊时间</span>
           </el-menu-item>
-          <el-menu-item index="/home/comments" @click="addIdx('/home/comments')">
+          <el-menu-item
+            index="/home/comments"
+            @click="addIdx('/home/comments')"
+          >
             <i class="el-icon-collection"></i>
             <span slot="title">留言板</span>
           </el-menu-item>
@@ -49,10 +63,27 @@
         </el-menu>
         <div class="container">
           <div class="switch switch-yellow">
-            <input type="radio" class="switch-input" name="view3" id="week3" checked @change="upOpenPf('open')" />
-            <label for="week3" class="switch-label switch-label-off">open</label>
-            <input type="radio" class="switch-input" name="view3" id="month3" @change="upOpenPf('close')" />
-            <label for="month3" class="switch-label switch-label-on">close</label>
+            <input
+              type="radio"
+              class="switch-input"
+              name="view3"
+              id="week3"
+              checked
+              @change="upOpenPf('open')"
+            />
+            <label for="week3" class="switch-label switch-label-off"
+              >open</label
+            >
+            <input
+              type="radio"
+              class="switch-input"
+              name="view3"
+              id="month3"
+              @change="upOpenPf('close')"
+            />
+            <label for="month3" class="switch-label switch-label-on"
+              >close</label
+            >
             <span class="switch-selection"></span>
           </div>
           <div class="togg-img">
@@ -64,10 +95,12 @@
     <div class="sign">
       <SignBtn :msgType="msgType" v-if="$route.name !== 'Login'" />
     </div>
-    <transition name="animate__animated" enter-active-class="animate__animated animate__bounceInRight">
+    <transition
+      name="animate__animated"
+      enter-active-class="animate__animated animate__bounceInRight"
+    >
       <router-view></router-view>
     </transition>
-
   </div>
 </template>
 <script>
@@ -180,7 +213,7 @@ export default {
     display: flex;
     flex-direction: column;
     padding-top: 2%;
-    z-index: 10;
+    z-index: 1000;
 
     .logo {
       position: relative;
@@ -201,6 +234,7 @@ export default {
       margin-top: 20px;
       border-right: 0;
       background-color: #fff;
+      z-index: 10000;
     }
 
     /deep/.el-menu-item {

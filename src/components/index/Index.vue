@@ -1,7 +1,7 @@
 <template>
   <div ref="vantaRef" style="width: 100%; height: 100vh" key="1">
     <div class="top-left" style="z-index: 1">
-      <a class="gethub" href="https://github.com/kafeibjtang/vue-bolg/tree/master" title="GitHub" target="_blank">
+      <a class="gethub" href="https://github.com/kafeibjtang/person-Blog.git" title="GitHub" target="_blank">
         <i class="ent-github">
           <svg t="1686193496428" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
             p-id="2351" width="32" height="32">
